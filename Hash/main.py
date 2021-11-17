@@ -14,5 +14,5 @@ if __name__ == "__main__":
     text=input("Enter the name of the file with the text:\n")
     blocks=hash.read_plaintext(text)
     res=hash.xor(blocks)
-
-    print(f"El resultado del hash es: {res} \n")
+    for index in range(3):
+        print(f"El resultado del hash es: {chr(res[index]+97)} \n")

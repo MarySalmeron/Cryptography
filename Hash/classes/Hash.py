@@ -95,12 +95,11 @@ class Hash:
 		for block in blocks:
 			# Transform the block from letters to int
 			block = [ord(letter) for letter in block]
-			print(f"Tamaño de block {len(block)}")
-			print(f"Tamaño de block0 {len(block0)}")
-			for i in block:
-				block0[i]=block[i]
-			for block in blocks:
-				# XOR between each block
-				for index in range(len(block)):
-					block0[index] ^= block[index]
+		
+			# XOR between each block
+			for index in range(3):
+				block0[index] ^= block[index]
+		for index in range(3):
+			block0[index]=block0[index]%26
+				
 		return block0
